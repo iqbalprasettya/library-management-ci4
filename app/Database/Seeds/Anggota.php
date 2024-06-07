@@ -8,33 +8,19 @@ class Anggota extends Seeder
 {
     public function run()
     {
-        $data = [
-            [
-                'nama' => 'John Doe',
-                'alamat' => 'Jl. Mawar No.1',
-                'kota' => 'Jakarta',
-                'no_telp' => '081234567890',
-                'tgl_lahir' => '1990-01-01'
-            ],
-            [
-                'nama' => 'Jane Smith',
-                'alamat' => 'Jl. Melati No.2',
-                'kota' => 'Bandung',
-                'no_telp' => '081234567891',
-                'tgl_lahir' => '1992-02-02'
-            ],
-            [
-                'nama' => 'Bob Johnson',
-                'alamat' => 'Jl. Anggrek No.3',
-                'kota' => 'Surabaya',
-                'no_telp' => '081234567892',
-                'tgl_lahir' => '1995-03-03'
-            ],
+        $data = [];
 
+        for ($i = 1; $i <= 50; $i++) {
+            $data[] = [
+                'nama' => 'Anggota ' . $i,
+                'alamat' => 'Alamat ' . $i,
+                'kota' => 'Kota ' . $i,
+                'no_telp' => '08123456789' . $i,
+                'tgl_lahir' => date('Y-m-d', strtotime('-' . rand(18, 50) . ' years')),
+            ];
+        }
 
-        ];
-
+        // Using Query Builder
         $this->db->table('anggota')->insertBatch($data);
-
     }
 }

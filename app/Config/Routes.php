@@ -8,13 +8,16 @@ use CodeIgniter\Router\RouteCollection;
 
 
 
-// login
-$routes->get('/login', 'AuthController::login');
-$routes->post('/login', 'AuthController::authenticate');
+$routes->group('', ['filter' => 'loggedin'], function ($routes) {
+    // login
+    $routes->get('/login', 'AuthController::login');
+    $routes->post('/login', 'AuthController::authenticate');
+    // register
+    $routes->get('/register', 'AuthController::register');
+    $routes->post('/register', 'AuthController::store');
+});
+
 $routes->get('/logout', 'AuthController::logout');
-// register
-$routes->get('/register', 'AuthController::register');
-$routes->post('/register', 'AuthController::store');
 
 // route group
 $routes->group('', ['filter' => 'auth'], function ($routes) {
@@ -51,4 +54,9 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('/pinjam/update/(:num)', 'PinjamController::update/$1');
     // hapus pinjam
     $routes->get('/pinjam/delete/(:num)', 'PinjamController::delete/$1');
+    // ekport laporan
+    $routes->get('/laporan', 'LaporanController::index');
+    $routes->get('/laporan/export-pinjam', 'LaporanController::exportPinjam');
+    $routes->get('/laporan/export-anggota', 'LaporanController::exportAnggota');
+    $routes->get('/laporan/export-buku', 'LaporanController::exportBuku');
 });

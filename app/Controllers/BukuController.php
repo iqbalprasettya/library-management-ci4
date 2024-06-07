@@ -45,6 +45,7 @@ class BukuController extends BaseController
             'genre_buku' => $this->request->getVar('genre_buku'),
             'status' => 'Tersedia'
         ]);
+        // dd($this->request->getVar('tahun_terbit'));
         return redirect()->to('/buku');
     }
 

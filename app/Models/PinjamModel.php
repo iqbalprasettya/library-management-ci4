@@ -53,4 +53,16 @@ class PinjamModel extends Model
         $builder->join('buku', 'buku.no_buku = pinjam.no_buku');
         return $builder->get()->getResultArray();
     }
+
+    // $data['pinjam'] = $this->pinjamModel->where('id_anggota', $id_anggota)->getPinjamByUser();
+    public function getPinjamByUser($id_anggota)
+    {
+        $builder = $this->db->table($this->table);
+        $builder->select('pinjam.*, anggota.nama AS nama_anggota, buku.judul AS judul_buku');
+        $builder->join('anggota', 'anggota.id_anggota = pinjam.id_anggota');
+        $builder->join('buku', 'buku.no_buku = pinjam.no_buku');
+        $builder->where('pinjam.id_anggota', $id_anggota);
+        return $builder->get()->getResultArray();
+    }
+    
 }

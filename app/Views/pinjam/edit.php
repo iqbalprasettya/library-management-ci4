@@ -28,7 +28,7 @@
                         <!-- Component Preview-->
                         <div class="sbp-preview">
                             <div class="sbp-preview-content">
-                                <form action="/pinjam/update/<?= $pinjam['no_pinjam'] ?>" method="post">
+                                <form action="/dashboard/pinjam/update/<?= $pinjam['no_pinjam'] ?>" method="post">
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for="exampleFormControlInput1">Anggota</label>
@@ -41,8 +41,11 @@
                                         <div class="col-md-6 mb-3">
                                             <label for="exampleFormControlInput1">Buku</label>
                                             <select class="form-control" id="no_buku" name="no_buku" required>
+
                                                 <?php foreach ($buku as $b) : ?>
                                                     <option value="<?= $b['no_buku'] ?>" <?= $b['no_buku'] == $pinjam['no_buku'] ? 'selected' : '' ?>><?= $b['judul'] ?></option>
+
+
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>

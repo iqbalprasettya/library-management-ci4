@@ -52,7 +52,7 @@ class PinjamController extends BaseController
 
         $this->bukuModel->update($no_buku, ['status' => 'Dipinjam']);
 
-        return redirect()->to('/pinjam');
+        return redirect()->to('/dashboard/pinjam');
     }
 
     // pinjam/edit
@@ -84,7 +84,7 @@ class PinjamController extends BaseController
             'tgl_kembali' => $this->request->getPost('tgl_kembali')
         ]);
 
-        return redirect()->to('/pinjam');
+        return redirect()->to('/dashboard/pinjam');
     }
 
     // delete pinjam
@@ -94,6 +94,6 @@ class PinjamController extends BaseController
         $no_buku = $pinjam['no_buku'];
         $this->bukuModel->update($no_buku, ['status' => 'Tersedia']);
         $this->pinjamModel->delete($id);
-        return redirect()->to('/pinjam');
+        return redirect()->to('/dashboard/pinjam');
     }
 }

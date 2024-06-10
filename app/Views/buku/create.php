@@ -28,7 +28,7 @@
                         <!-- Component Preview-->
                         <div class="sbp-preview">
                             <div class="sbp-preview-content">
-                                <form action="/buku" method="post">
+                                <form action="/dashboard/buku" method="post">
                                     <div class="row">
                                         <div class="col-md-4 mb-3">
                                             <label for="exampleFormControlInput1">Judul</label>

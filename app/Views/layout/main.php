@@ -59,7 +59,7 @@
                         Account
                     </a>
                     <?php if (isset($_SESSION['username'])) : ?>
-                        <a class="dropdown-item" href="<?= base_url('logout') ?>">
+                        <a class="dropdown-item" href="<?= base_url('dashboard/logout') ?>">
                             <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
                             Logout
                         </a>
@@ -79,22 +79,22 @@
                         <div class="sidenav-menu-heading">Core</div>
 
                         <!-- Sidenav Link-->
-                        <a class="nav-link" href="<?= base_url('anggota') ?>">
+                        <a class="nav-link" href="<?= base_url('dashboard/anggota') ?>">
                             <div class="nav-link-icon"><i data-feather="users"></i></div>
                             Anggota
                         </a>
                         <!-- Sidenav Link-->
-                        <a class="nav-link" href="<?= base_url('buku') ?>">
+                        <a class="nav-link" href="<?= base_url('dashboard/buku') ?>">
                             <div class="nav-link-icon"><i data-feather="book-open"></i></div>
                             Buku
                         </a>
                         <!-- Sidenav Link-->
-                        <a class="nav-link" href="<?= base_url('pinjam') ?>">
+                        <a class="nav-link" href="<?= base_url('dashboard/pinjam') ?>">
                             <div class="nav-link-icon"><i data-feather="bookmark"></i></div>
                             Pinjam Buku
                         </a>
                         <!-- Sidenav Link-->
-                        <a class="nav-link" href="<?= base_url('laporan') ?>">
+                        <a class="nav-link" href="<?= base_url('dashboard/laporan') ?>">
                             <div class="nav-link-icon"><i data-feather="share"></i></div>
                             Laporan
                         </a>

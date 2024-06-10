@@ -22,10 +22,10 @@
     <div class="card mb-4">
         <div class="card-header">Extended DataTables</div>
 
-        <div class="card-body">
+        <div class="card-body overflow-auto">
             <div class="my-3">
                 <?php if (session()->get('role') === 'admin') : ?>
-                    <a href="/buku/create" class="btn btn-success btn-sm">Tambah Buku</a>
+                    <a href="/dashboard/buku/create" class="btn btn-success btn-sm">Tambah Buku</a>
                 <?php endif; ?>
 
                 <?php if (session()->getFlashdata('error')) : ?>
@@ -60,8 +60,8 @@
                             <td><?= ($b['status'] == 'Tersedia') ? '<span class="badge bg-success">Tersedia</span>' : '<span class="badge bg-danger">Dipinjam</span>' ?></td>
                             <?php if (session()->get('role') === 'admin') : ?>
                                 <td>
-                                    <a href="/buku/edit/<?= $b['no_buku'] ?>" class="btn btn-datatable btn-icon text-warning"><i data-feather="edit"></i></a>
-                                    <a href="/buku/delete/<?= $b['no_buku'] ?>" class="btn btn-datatable btn-icon text-danger" onclick="return confirm('Apakah Anda yakin?')"><i data-feather="trash-2"></i></a>
+                                    <a href="/dashboard/buku/edit/<?= $b['no_buku'] ?>" class="btn btn-datatable btn-icon text-warning"><i data-feather="edit"></i></a>
+                                    <a href="/dashboard/buku/delete/<?= $b['no_buku'] ?>" class="btn btn-datatable btn-icon text-danger" onclick="return confirm('Apakah Anda yakin?')"><i data-feather="trash-2"></i></a>
                                 </td>
                             <?php endif ?>
                         </tr>

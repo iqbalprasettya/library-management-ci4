@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Filters\LoggedInUserFilter;
 use CodeIgniter\Config\Filters as BaseFilters;
 use CodeIgniter\Filters\Cors;
 use CodeIgniter\Filters\CSRF;
@@ -35,7 +36,9 @@ class Filters extends BaseFilters
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
         'auth' => \App\Filters\AuthFilter::class,
+        'authuser' => \App\Filters\AuthUserFilter::class,
         'loggedin' => \App\Filters\LoggedInFilter::class,
+        'logeedinuser' => \App\Filters\LoggedInUserFilter::class,
     ];
 
     /**

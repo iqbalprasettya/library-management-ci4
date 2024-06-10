@@ -34,11 +34,11 @@
                             <?php endif; ?>
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header justify-content-center">
-                                    <h3 class="fw-bolder my-4">Daftar Akun</h3>
+                                    <h3 class="fw-bolder my-4">Daftar Akun Anggota</h3>
                                 </div>
                                 <div class="card-body">
                                     <!-- Registration form-->
-                                    <form action="/admin/register" method="post">
+                                    <form action="/register" method="post">
 
                                         <!-- Form Row-->
                                         <!-- <div class="row gx-3">
@@ -58,8 +58,13 @@
                                         </div> -->
                                         <!-- Form Group (email address)            -->
                                         <div class="mb-3">
+                                            <label class="small mb-1" for="inputEmailAddress">Nama</label>
+                                            <input type="text" class="form-control" id="nama" name="nama" required>
+
+                                        </div>
+                                        <div class="mb-3">
                                             <label class="small mb-1" for="inputEmailAddress">Username</label>
-                                            <input class="form-control" id="inputEmailAddress" type="uesrname" name="username" required placeholder="Enter email address" />
+                                            <input class="form-control" id="inputEmailAddress" type="uesrname" name="username" required placeholder="Enter username" />
                                         </div>
                                         <!-- Form Row    -->
                                         <div class="row gx-3">
@@ -77,19 +82,32 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="mb-3">
-                                            <label for="role" class="form-label">Role</label>
-                                            <select class="form-control" id="role" name="role">
-                                                <option value="user">User</option>
-                                                <option value="admin">Admin</option>
-                                            </select>
+                                            <label class="small mb-1" for="inputEmailAddress">Alamat</label>
+                                            <input type="text" class="form-control" id="alamat" name="alamat" required>
+                                        </div>
+
+                                        <div class="row gx-3">
+                                            <div class="col-md-4 mb-3">
+                                                <label class="small mb-1" for="inputEmailAddress">No Telp</label>
+                                                <input type="text" class="form-control" id="no_telp" name="no_telp" required>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label class="small mb-1" for="inputEmailAddress">Tanggal Lahir</label>
+                                                <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" required>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label class="small mb-1" for="inputEmailAddress">Kota</label>
+                                                <input type="text" class="form-control" id="kota" name="kota" required>
+                                            </div>
                                         </div>
                                         <!-- Form Group (create account submit)-->
                                         <button class="btn btn-primary btn-block" type="submit">Daftar</button>
                                     </form>
                                 </div>
                                 <div class="card-footer text-center">
-                                    <div class="small">Sudah Punya Akun?<a href="/admin/login"> Masuk</a></div>
+                                    <div class="small">Sudah Punya Akun?<a href="/login"> Masuk</a></div>
                                 </div>
                             </div>
                         </div>

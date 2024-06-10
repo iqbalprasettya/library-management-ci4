@@ -23,37 +23,50 @@
             <main>
                 <div class="container-xl px-4">
                     <div class="row justify-content-center">
-                        <div class="col-lg-5">
+                        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-11">
                             <!-- Basic login form-->
                             <?php if (session()->getFlashdata('success')) : ?>
                                 <div class="alert alert-success mt-3">
                                     <?= session()->getFlashdata('success') ?>
                                 </div>
                             <?php endif; ?>
-
-                            <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                <div class="card-header justify-content-center">
-                                    <h2 class="fw-bolder my-4">Masuk</h2>
+                            <?php if (session()->getFlashdata('error')) : ?>
+                                <div class="alert alert-danger mt-3">
+                                    <?= session()->getFlashdata('error') ?>
                                 </div>
-                                <div class="card-body">
+                            <?php endif; ?>
+                            <!-- Social login form-->
+                            <div class="card my-5">
+                                <div class="card-body p-5 text-center">
+                                    <div class="mb-3"><h2 class="fw-bolder">Masuk Anggota</h2></div>
+                                </div>
+                                <hr class="my-0" />
+                                <div class="card-body p-5">
                                     <!-- Login form-->
-                                    <form action="/auth/login" method="post">
-                                        <!-- Form Group (email address)-->
+                                    <form action="/login" method="post">
+                                        <!-- Form Group (Username)-->
                                         <div class="mb-3">
-                                            <label class="small mb-1" for="inputEmailAddress">Username</label>
-                                            <input class="form-control" id="inputEmailAddress" type="username" name="username" required placeholder="Enter Username" />
+                                            <label class="text-gray-600 small" for="emailExample">Username</label>
+                                            <input class="form-control form-control-solid" type="username" name="username" required placeholder="Enter Username" />
                                         </div>
                                         <!-- Form Group (password)-->
                                         <div class="mb-3">
-                                            <label class="small mb-1" for="inputPassword">Password</label>
-                                            <input class="form-control" id="inputPassword" type="password" name="password" required placeholder="Enter password" />
+                                            <label class="text-gray-600 small" for="passwordExample">Password</label>
+                                            <input class="form-control form-control-solid" type="password" name="password" required placeholder="Enter password" />
                                         </div>
+                                        <!-- Form Group (forgot password link)-->
+                                        <!-- <div class="mb-3"><a class="small" href="auth-password-social.html">Forgot your password?</a></div> -->
                                         <!-- Form Group (login box)-->
-                                        <div class="d-flex align-items-center justify-content-end mt-4 mb-0">
+                                        <div class="d-flex align-items-center justify-content-between mb-0">
+                                            <!-- <div class="form-check">
+                                                <input class="form-check-input" id="checkRememberPassword" type="checkbox" value="" />
+                                                <label class="form-check-label" for="checkRememberPassword">Remember password</label>
+                                            </div> -->
                                             <button class="btn btn-primary">Masuk</button>
                                         </div>
                                     </form>
                                 </div>
+                                <hr class="my-0" />
                                 <div class="card-footer text-center">
                                     <div class="small">Belum punya akun?<a href="/register"> Daftar</a></div>
                                 </div>

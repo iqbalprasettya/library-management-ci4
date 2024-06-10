@@ -22,10 +22,10 @@
     <div class="card mb-4">
         <div class="card-header">Extended DataTables</div>
 
-        <div class="card-body">
+        <div class="card-body overflow-auto">
             <div class="my-3">
                 <?php if (session()->get('role') === 'admin') : ?>
-                    <a href="/anggota/create" class="btn btn-success btn-sm">Tambah Anggota</a>
+                    <a href="/dashboard/anggota/create" class="btn btn-success btn-sm">Tambah Anggota</a>
                 <?php endif; ?>
                 <?php if (session()->getFlashdata('error')) : ?>
                     <div class="alert alert-danger mt-3">
@@ -38,6 +38,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Nama</th>
+                        <th>Username</th>
                         <th>Alamat</th>
                         <th>Kota</th>
                         <th>No. Telp</th>
@@ -52,14 +53,16 @@
                         <tr>
                             <td><?= $a['id_anggota'] ?></td>
                             <td><?= $a['nama'] ?></td>
+                            <td><?= $a['username'] ?></td>
+                             
                             <td><?= $a['alamat'] ?></td>
                             <td><?= $a['kota'] ?></td>
                             <td><?= $a['no_telp'] ?></td>
                             <td><span class="badge bg-primary"><?= $a['tgl_lahir'] ?></span></td>
                             <?php if (session()->get('role') === 'admin') : ?>
                                 <td>
-                                    <a href="/anggota/edit/<?= $a['id_anggota'] ?>" class="btn btn-datatable btn-icon text-warning"><i data-feather="edit"></i></a>
-                                    <a href="/anggota/delete/<?= $a['id_anggota'] ?>" class="btn btn-datatable btn-icon text-danger " onclick="return confirm('Apakah Anda yakin?')"><i data-feather="trash-2"></i></a>
+                                    <a href="/dashboard/anggota/edit/<?= $a['id_anggota'] ?>" class="btn btn-datatable btn-icon text-warning"><i data-feather="edit"></i></a>
+                                    <a href="/dashboard/anggota/delete/<?= $a['id_anggota'] ?>" class="btn btn-datatable btn-icon text-danger " onclick="return confirm('Apakah Anda yakin?')"><i data-feather="trash-2"></i></a>
                                 </td>
                             <?php endif; ?>
                         </tr>

@@ -18,8 +18,8 @@
 </header>
 <!-- Main page content-->
 <div class="container-xl px-4 mt-n10">
-    <a href="/laporan/export-pinjam" class="btn btn-success">Export Peminjaman to Excel</a>
-    <a href="/laporan/export-anggota" class="btn btn-success">Export Anggota to Excel</a>
-    <a href="/laporan/export-buku" class="btn btn-success">Export Buku to Excel</a>
+    <a href="/dashboard/laporan/export-pinjam" class="btn btn-success my-1">Export Peminjaman to Excel</a>
+    <a href="/dashboard/laporan/export-anggota" class="btn btn-success my-1">Export Anggota to Excel</a>
+    <a href="/dashboard/laporan/export-buku" class="btn btn-success my-1">Export Buku to Excel</a>
 </div>
 <?= $this->endSection() ?>

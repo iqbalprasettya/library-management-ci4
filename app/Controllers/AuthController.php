@@ -78,20 +78,20 @@ class AuthController extends Controller
                     'role' => $user['role'],
                     'logged_in' => true
                 ]);
-                return redirect()->to('/');
+                return redirect()->to('/dashboard');
             } else {
                 $session->setFlashdata('error', 'Password salah');
-                return redirect()->to('/login');
+                return redirect()->to('/auth/login');
             }
         } else {
             $session->setFlashdata('error', 'Username tidak ditemukan');
-            return redirect()->to('/login');
+            return redirect()->to('/auth/login');
         }
     }
 
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/login');
+        return redirect()->to('/auth/login');
     }
 }

@@ -46,7 +46,7 @@ class BukuController extends BaseController
             'status' => 'Tersedia'
         ]);
         // dd($this->request->getVar('tahun_terbit'));
-        return redirect()->to('/buku');
+        return redirect()->to('/dashboard/buku');
     }
 
     // buku/edit
@@ -66,7 +66,7 @@ class BukuController extends BaseController
             'genre_buku' => $this->request->getVar('genre_buku'),
 
         ]);
-        return redirect()->to('/buku');
+        return redirect()->to('/dashboard/buku');
     }
 
     // delete buku
@@ -81,6 +81,6 @@ class BukuController extends BaseController
 
         $this->bukuModel->delete($id);
 
-        return redirect()->to('/buku');
+        return redirect()->to('/dashboard/buku');
     }
 }

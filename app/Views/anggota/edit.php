@@ -28,7 +28,7 @@
                         <!-- Component Preview-->
                         <div class="sbp-preview">
                             <div class="sbp-preview-content">
-                            <form action="/anggota/update/<?= $anggota['id_anggota'] ?>" method="post">
+                            <form action="/dashboard/anggota/update/<?= $anggota['id_anggota'] ?>" method="post">
                                     <div class="row">
                                         <div class="col-md-3 mb-3">
                                             <label for="exampleFormControlInput1">Nama</label>
@@ -44,7 +44,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3">
                                             <label for="exampleFormControlInput1">No Telp</label>
-                                            <input class="form-control" id="exampleFormControlInput1" type="number" name="no_telp" value="<?= $anggota['no_telp'] ?>" placeholder="08577..." required />
+                                            <input class="form-control" id="exampleFormControlInput1" type="text" name="no_telp" value="<?= $anggota['no_telp'] ?>" placeholder="08577..." required />
                                         </div>
                                         <div class="col-lg-12 mb-3">
                                             <label for="exampleFormControlTextarea1">Alamat</label>

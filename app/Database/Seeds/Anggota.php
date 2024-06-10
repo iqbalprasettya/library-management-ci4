@@ -3,20 +3,26 @@
 namespace App\Database\Seeds;
 
 use CodeIgniter\Database\Seeder;
+use Faker\Factory;
 
 class Anggota extends Seeder
 {
     public function run()
     {
+        $faker = Factory::create();
+
         $data = [];
 
-        for ($i = 1; $i <= 50; $i++) {
+        // Generate 50 fake data
+        for ($i = 0; $i < 50; $i++) {
             $data[] = [
-                'nama' => 'Anggota ' . $i,
-                'alamat' => 'Alamat ' . $i,
-                'kota' => 'Kota ' . $i,
-                'no_telp' => '08123456789' . $i,
-                'tgl_lahir' => date('Y-m-d', strtotime('-' . rand(18, 50) . ' years')),
+                'nama' => $faker->name,
+                'alamat' => $faker->address,
+                'kota' => $faker->city,
+                'no_telp' => $faker->phoneNumber,
+                'tgl_lahir' => $faker->date,
+                'username' => $faker->userName,
+                'password' => password_hash('password', PASSWORD_BCRYPT),
             ];
         }
 

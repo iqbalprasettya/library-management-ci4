@@ -37,8 +37,9 @@ class AnggotaController extends BaseController
             'kota' => $this->request->getVar('kota'),
             'no_telp' => $this->request->getVar('no_telp'),
             'tgl_lahir' => $this->request->getVar('tgl_lahir'),
+
         ]);
-        return redirect()->to('/anggota');
+        return redirect()->to('/dashboard/anggota');
     }
 
     // anggota/edit
@@ -58,13 +59,13 @@ class AnggotaController extends BaseController
             'no_telp' => $this->request->getPost('no_telp'),
             'tgl_lahir' => $this->request->getPost('tgl_lahir')
         ]);
-        return redirect()->to('/anggota');
+        return redirect()->to('/dashboard/anggota');
     }
 
     // delete anggota
     public function delete($id)
     {
         $this->anggotaModel->delete($id);
-        return redirect()->to('/anggota');
+        return redirect()->to('/dashboard/anggota');
     }
 }

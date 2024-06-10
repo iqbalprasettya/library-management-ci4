@@ -28,7 +28,7 @@
                         <!-- Component Preview-->
                         <div class="sbp-preview">
                             <div class="sbp-preview-content">
-                                <form action="/pinjam" method="post">
+                                <form action="/dashboard/pinjam" method="post">
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for="exampleFormControlInput1">Anggota</label>

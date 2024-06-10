@@ -21,10 +21,10 @@
     <div class="card mb-4">
         <div class="card-header">Extended DataTables</div>
 
-        <div class="card-body">
+        <div class="card-body overflow-auto">
             <div class="my-3">
                 <?php if (session()->get('role') === 'admin') : ?>
-                    <a href="/pinjam/create" class="btn btn-success btn-sm">Pinjam</a>
+                    <a href="/dashboard/pinjam/create" class="btn btn-success btn-sm">Pinjam</a>
                 <?php endif; ?>
                 <?php if (session()->getFlashdata('error')) : ?>
                     <div class="alert alert-danger mt-3">
@@ -55,8 +55,8 @@
                             <td><span class="badge bg-info"><?= $p['tgl_kembali'] ?></span></td>
                             <?php if (session()->get('role') === 'admin') : ?>
                                 <td>
-                                    <a href="/pinjam/edit/<?= $p['no_pinjam'] ?>" class="btn btn-datatable btn-icon text-warning"><i data-feather="edit"></i></a>
-                                    <a href="/pinjam/delete/<?= $p['no_pinjam'] ?>" class="btn btn-datatable btn-icon text-danger " onclick="return confirm('Apakah Anda yakin?')"><i data-feather="trash-2"></i></a>
+                                    <a href="/dashboard/pinjam/edit/<?= $p['no_pinjam'] ?>" class="btn btn-datatable btn-icon text-warning"><i data-feather="edit"></i></a>
+                                    <a href="/dashboard/pinjam/delete/<?= $p['no_pinjam'] ?>" class="btn btn-datatable btn-icon text-danger " onclick="return confirm('Apakah Anda yakin?')"><i data-feather="trash-2"></i></a>
                                 </td>
                             <?php endif; ?>
                         </tr>

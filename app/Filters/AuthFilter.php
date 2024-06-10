@@ -11,13 +11,14 @@ class AuthFilter implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         // jika belum login arahkan ke login & jika sudah login tidak bisa ke halaman login dan register
+        
         if (!session()->get('logged_in')) {
-            return redirect()->to('/login');
+            return redirect()->to('/auth/login');
         }
 
         if ($arguments && in_array('admin', $arguments)) {
             if (session()->get('role') !== 'admin') {
-                return redirect()->to('/');
+                return redirect()->to('/dashboard');
             }
         }
     }

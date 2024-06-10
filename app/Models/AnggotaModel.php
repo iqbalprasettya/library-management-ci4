@@ -12,7 +12,7 @@ class AnggotaModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama', 'alamat', 'kota', 'no_telp', 'tgl_lahir', 'created_at', 'updated_at'];
+    protected $allowedFields    = ['nama', 'alamat', 'kota', 'no_telp', 'username', 'password', 'tgl_lahir', 'created_at', 'updated_at'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

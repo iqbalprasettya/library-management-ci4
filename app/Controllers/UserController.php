@@ -24,9 +24,24 @@ class UserController extends BaseController
     // pinjam/index
     public function index()
     {
-        // Tampilkan pinjaman yang dipinjam anggota dengan id_anggota yang login
+        // hitung total anggota
+        $totalAnggota = $this->anggotaModel->countAll();
+        // hitung total buku
+        $totalBuku = $this->bukuModel->countAll();
+        // hitung total peminjaman
+        $totalPinjam = $this->pinjamModel->countAll();
+        // hitung total buku yang status Tersedia
+        $totalBukuTersedia = $this->bukuModel->where('status', 'Tersedia')->countAllResults();
         $id_anggota = session()->get('id_anggota');
-        $data['pinjam'] = $this->pinjamModel->getPinjamByUser($id_anggota);
+
+        $data = [
+            'title' => 'Home',
+            'totalAnggota' => $totalAnggota,
+            'totalBuku' => $totalBuku,
+            'totalPinjam' => $totalPinjam,
+            'totalBukuTersedia' => $totalBukuTersedia,
+            'pinjam' => $this->pinjamModel->getPinjamByUser($id_anggota)
+        ];
 
         return view('user/index', $data);
     }
@@ -91,10 +106,14 @@ class UserController extends BaseController
             ],
 
             'username' => [
-                'rules' => 'required|is_unique[users.username]',
+                // rules no space
+                'rules' => 'required|alpha_numeric|min_length[5]|max_length[30]|is_unique[anggota.username]',
                 'errors' => [
-                    'required' => 'Username is required',
-                    'is_unique' => 'Username already exists'
+                    'required' => 'Username harus diisi',
+                    'alpha_numeric' => 'Username hanya boleh berisi huruf, angka dan karakter tanpa spasi',
+                    'min_length' => 'Username minimal 5 karakter',
+                    'max_length' => 'Username maksimal 30 karakter',
+                    'is_unique' => 'Username sudah digunakan'
                 ]
 
             ],
@@ -205,7 +224,7 @@ class UserController extends BaseController
     public function logout()
     {
         // logout session user/anggota ke / dan kasih pesan
-        session()->destroy();
+        session()->remove(['id_anggota', 'username', 'logged_in_user']);
         return redirect()->to('/')->with('success', 'Anda telah logout');
     }
 }

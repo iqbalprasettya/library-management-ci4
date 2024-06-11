@@ -25,11 +25,16 @@
         <div class="card-body overflow-auto">
             <div class="my-3">
                 <?php if (session()->get('role') === 'admin') : ?>
-                    <a href="/dashboard/anggota/create" class="btn btn-success btn-sm">Tambah Anggota</a>
+                    <a href="/dashboard/anggota/create" class="btn btn-success btn-sm">Tambah Anggota <i class="m-1" data-feather="user-plus"></i></a>
                 <?php endif; ?>
                 <?php if (session()->getFlashdata('error')) : ?>
                     <div class="alert alert-danger mt-3">
                         <?= session()->getFlashdata('error') ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (session()->getFlashdata('success')) : ?>
+                    <div class="alert alert-success mt-3">
+                        <?= session()->getFlashdata('success') ?>
                     </div>
                 <?php endif; ?>
             </div>

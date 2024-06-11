@@ -24,7 +24,7 @@
             <main>
                 <div class="container-xl px-4">
 
-                    <div class="text-end mt-5"><a href="/user/logout" class="btn btn-danger">Logout</a></div>
+                    <div class="text-end mt-5 mb-2"><a href="/user/logout" class="btn btn-danger">Logout <i class="m-1" data-feather="log-out"></i></a></div>
                     <div class="row justify-content-center">
                         <div class="col-lg-12">
 
@@ -49,7 +49,7 @@
                                                         <input type="date" class="form-control" id="tgl_kembali" name="tgl_kembali" required>
                                                     </div>
                                                 </div>
-                                                <button type="submit" class="btn btn-success">Simpan</button>
+                                                <button type="submit" class="btn btn-success">Simpan <i class="m-1" data-feather="save"></i></button>
                                             </form>
                                         </div>
                                     </div>

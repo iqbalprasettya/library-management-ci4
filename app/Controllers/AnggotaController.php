@@ -5,14 +5,20 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\AnggotaModel;
+use App\Models\PinjamModel;
+use App\Models\BukuModel;
 
 class AnggotaController extends BaseController
 {
     protected $anggotaModel;
+    protected $pinjamModel;
+    protected $bukuModel;
 
     public function __construct()
     {
         $this->anggotaModel = new AnggotaModel();
+        $this->pinjamModel = new PinjamModel();
+        $this->bukuModel = new BukuModel();
     }
 
     // anggota/index
@@ -62,10 +68,21 @@ class AnggotaController extends BaseController
         return redirect()->to('/dashboard/anggota');
     }
 
-    // delete anggota
+    // delete anggot
     public function delete($id)
     {
-        $this->anggotaModel->delete($id);
-        return redirect()->to('/dashboard/anggota');
+        // Cek apakah anggota memiliki buku yang sedang dipinjam
+        $pinjaman = $this->pinjamModel->where('id_anggota', $id)->findAll();
+
+        if (count($pinjaman) > 0) {
+            session()->setFlashdata('error', 'Anggota tidak dapat dihapus karena masih memiliki buku
+            yang sedang dipinjam');
+            return redirect()->to('/dashboard/anggota');
+        } else {
+            // Hapus anggota
+            $this->anggotaModel->delete($id);
+
+            return redirect()->to('/dashboard/anggota')->with('success', 'Anggota berhasil dihapus');
+        }
     }
 }

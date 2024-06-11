@@ -35,10 +35,15 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
-        'auth' => \App\Filters\AuthFilter::class,
-        'authuser' => \App\Filters\AuthUserFilter::class,
         'loggedin' => \App\Filters\LoggedInFilter::class,
+        'auth' => \App\Filters\AuthFilter::class,
         'logeedinuser' => \App\Filters\LoggedInUserFilter::class,
+        'authuser' => \App\Filters\AuthUserFilter::class,
+
+        
+        
+        
+        
     ];
 
     /**
@@ -109,11 +114,7 @@ class Filters extends BaseFilters
      * @var array<string, array<string, list<string>>>
      */
     public array $filters = [
-        'auth' => [
-            'before' => [
-                // Add routes here that require authentication
-                'admin/*'
-            ],
-        ],
+        'auth' => ['before' => ['dashboard/*']],
+        'authuser' => ['before' => ['user/*']],
     ];
 }

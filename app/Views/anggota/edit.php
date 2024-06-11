@@ -51,7 +51,7 @@
                                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="alamat" required><?= $anggota['alamat'] ?></textarea>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-success">Update</button>
+                                    <button type="submit" class="btn btn-success">Update <i class="m-1" data-feather="save"></i></button>
                                 </form>
                             </div>
                         </div>

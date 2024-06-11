@@ -64,7 +64,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="small mb-1" for="inputEmailAddress">Username</label>
-                                            <input class="form-control" id="inputEmailAddress" type="uesrname" name="username" required placeholder="Enter username" />
+                                            <input class="form-control" id="inputEmailAddress" type="username" name="username" required placeholder="Enter username" />
                                         </div>
                                         <!-- Form Row    -->
                                         <div class="row gx-3">

@@ -24,7 +24,7 @@
             <main>
                 <div class="container-xl px-4">
 
-                    <div class="text-end mt-5"><a href="/user/logout" class="btn btn-danger">Logout</a></div>
+                    <div class="text-end mt-5"><a href="/user/logout" class="btn btn-danger">Logout <i class="m-1" data-feather="log-out"></i></a></div>
                     <div class="row justify-content-center">
                         <div class="col-lg-12">
 
@@ -34,7 +34,7 @@
                                 <div class="card-body overflow-auto">
                                     <div class="my-3">
 
-                                        <a href="/user/pinjam" class="btn btn-success btn-sm">Pinjam</a>
+                                        <a href="/user/pinjam" class="btn btn-success btn-sm">Pinjam <i class="m-1" data-feather="book-open"></i></a>
 
                                         <?php if (session()->getFlashdata('error')) : ?>
                                             <div class="alert alert-danger mt-3">
@@ -66,7 +66,7 @@
                                                     <td><span class="badge bg-info"><?= $p['tgl_kembali'] ?></span></td>
 
                                                     <td>
-                                                         <button class="btn btn-danger btn-sm" onclick="location.href='/user/pinjam/delete/<?= $p['no_pinjam'] ?>'">Kembalikan</button>
+                                                        <button class="btn btn-danger btn-sm" onclick="location.href='/user/pinjam/delete/<?= $p['no_pinjam'] ?>'">Kembalikan <i class="m-1" data-feather="log-out"></i></button>
 
 
                                                     </td>
@@ -74,6 +74,74 @@
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>
+
+
+                                    <div class="row mt-5">
+                                    <h3 class="mb-3">Library Management System</h3>
+
+                                    <div class="col-lg-6 col-xl-3 mb-4">
+                                        <div class="card bg-primary text-white h-100">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="me-3">
+                                                        <div class="text-white-75 small">Total Anggota</div>
+                                                        <!-- hittung total anggota -->
+                                                         <div class="fs-2 fw-semibold"><?php echo $totalAnggota ?></div>
+                                                    </div>
+                                                    <i class="feather-xl text-white-50" data-feather="users"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer d-flex align-items-center justify-content-between small">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-3 mb-4">
+                                        <div class="card bg-warning text-white h-100">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="me-3">
+                                                        <div class="text-white-75 small">Total Buku</div>
+                                                        <div class="text-lg fw-bold"><?php echo $totalBuku ?></div>
+
+                                                    </div>
+                                                    <i class="feather-xl text-white-50" data-feather="book-open"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer d-flex align-items-center justify-content-between small">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-3 mb-4">
+                                        <div class="card bg-success text-white h-100">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="me-3">
+                                                        <div class="text-white-75 small">Total Peminjaman</div>
+                                                        <div class="text-lg fw-bold"><?php echo $totalPinjam ?></div>
+                                                    </div>
+                                                    <i class="feather-xl text-white-50" data-feather="bookmark"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer d-flex align-items-center justify-content-between small">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-3 mb-4">
+                                        <div class="card bg-info text-white h-100">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="me-3">
+                                                        <div class="text-white-75 small">Total Buku Tersedia</div>
+                                                        <div class="text-lg fw-bold"><?php echo $totalBukuTersedia ?></div>
+                                                    </div>
+                                                    <i class="feather-xl text-white-50" data-feather="check-square"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer d-flex align-items-center justify-content-between small">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>

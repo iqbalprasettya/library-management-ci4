@@ -59,7 +59,7 @@
                                             <input type="date" class="form-control" id="tgl_kembali" name="tgl_kembali" value="<?= $pinjam['tgl_kembali'] ?>" required>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-success">Update</button>
+                                    <button type="submit" class="btn btn-success">Update <i class="m-1" data-feather="save"></i></button>
                                 </form>
                             </div>
                         </div>

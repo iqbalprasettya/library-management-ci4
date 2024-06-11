@@ -91,7 +91,7 @@ class AuthController extends Controller
 
     public function logout()
     {
-        session()->destroy();
+        session()->remove(['id', 'username', 'role', 'logged_in']);
         return redirect()->to('/auth/login');
     }
 }

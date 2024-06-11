@@ -79,3 +79,4 @@ $routes->group('user', ['filter' => 'authuser'], function ($routes) {
 
     $routes->get('logout', 'UserController::logout');
 });
+

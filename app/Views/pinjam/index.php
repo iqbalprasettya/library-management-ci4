@@ -7,8 +7,8 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-auto mt-4">
                     <h1 class="page-header-title">
-                        <div class="page-header-icon"><i data-feather="filter"></i></div>
-                        Anggota
+                        <div class="page-header-icon"><i data-feather="bookmark"></i></div>
+                        Pinjam Buku
                     </h1>
                     <div class="page-header-subtitle">An extension of the Simple DataTables library, customized for SB Admin Pro</div>
                 </div>
@@ -24,11 +24,16 @@
         <div class="card-body overflow-auto">
             <div class="my-3">
                 <?php if (session()->get('role') === 'admin') : ?>
-                    <a href="/dashboard/pinjam/create" class="btn btn-success btn-sm">Pinjam</a>
+                    <a href="/dashboard/pinjam/create" class="btn btn-success btn-sm">Pinjam <i class="m-1" data-feather="book-open"></i></a>
                 <?php endif; ?>
                 <?php if (session()->getFlashdata('error')) : ?>
                     <div class="alert alert-danger mt-3">
                         <?= session()->getFlashdata('error') ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (session()->getFlashdata('success')) : ?>
+                    <div class="alert alert-success mt-3">
+                        <?= session()->getFlashdata('success') ?>
                     </div>
                 <?php endif; ?>
             </div>

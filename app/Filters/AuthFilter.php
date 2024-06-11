@@ -15,12 +15,6 @@ class AuthFilter implements FilterInterface
         if (!session()->get('logged_in')) {
             return redirect()->to('/auth/login');
         }
-
-        if ($arguments && in_array('admin', $arguments)) {
-            if (session()->get('role') !== 'admin') {
-                return redirect()->to('/dashboard');
-            }
-        }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)

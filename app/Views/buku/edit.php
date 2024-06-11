@@ -67,7 +67,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-success">Simpan</button>
+                                    <button type="submit" class="btn btn-success">Simpan<i class="m-1" data-feather="save"></i></button>
                                 </form>
                             </div>
                         </div>

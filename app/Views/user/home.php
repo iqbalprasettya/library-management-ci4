@@ -39,8 +39,8 @@
                                     <!-- sembunyikan tombol ketika anggota sudah login dan gantikan dengan tombol logout -->
 
                                     <div class="btn-auth mt-3">
-                                        <a href="<?php echo base_url('login') ?>" class="btn btn-success btn-sm me-1">Login</a>
-                                        <a href="<?php echo base_url('register') ?>" class="btn btn-outline-success btn-sm">Register</a>
+                                        <a href="<?php echo base_url('register') ?>" class="btn btn-success btn-sm">Register</a>
+                                        <a href="<?php echo base_url('login') ?>" class="btn btn-outline-success btn-sm me-1">Login</a>
                                     </div>
 
 

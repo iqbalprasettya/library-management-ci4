@@ -7,7 +7,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-auto mt-4">
                     <h1 class="page-header-title">
-                        <div class="page-header-icon"><i data-feather="edit-3"></i></div>
+                        <div class="page-header-icon"><i data-feather="book"></i></div>
                         Buku
                     </h1>
                     <div class="page-header-subtitle">Dynamic form components to give your users informative and intuitive inputs</div>
@@ -61,7 +61,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-success">Simpan</button>
+                                    <button type="submit" class="btn btn-success">Simpan <i class="m-1" data-feather="save"></i></button>
                                 </form>
                             </div>
                         </div>

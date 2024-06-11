@@ -7,7 +7,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-auto mt-4">
                     <h1 class="page-header-title">
-                        <div class="page-header-icon"><i data-feather="filter"></i></div>
+                        <div class="page-header-icon"><i data-feather="file-text"></i></div>
                         Laporan Peminjaman Buku
                     </h1>
                     <div class="page-header-subtitle">An extension of the Simple DataTables library, customized for SB Admin Pro</div>
